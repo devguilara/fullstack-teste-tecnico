@@ -11,7 +11,7 @@ export const register = async (fields: {
   }
 
   try {
-    const response = await fetch(`${apiUrl}/sign-up`, {
+    const response = await fetch(`${apiUrl}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
