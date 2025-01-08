@@ -1,74 +1,81 @@
 # Teste Leek Soluções: Vaga Desenvolvedor Fullstack Pleno
 
-Segue abaixo as instruções para a execução do teste.
+Este projeto é uma aplicação full-stack desenvolvida com **NestJS** no backend e **Next.js** no frontend. A aplicação permite o gerenciamento de tarefas, com funcionalidades como adicionar, editar, e listar tarefas.
 
----
+## Tecnologias Utilizadas
 
-### Instruções
+- **Backend**: NestJS, Prisma, PostgreSQL, JWT, bcryptjs
+- **Frontend**: Next.js, React, TailwindCSS, React Toastify
 
-1. **Faça um fork desse projeto** para a sua conta pessoal do GitHub.
-2. **Desenvolva a aplicação** conforme as Especificações Técnicas abaixo.
-3. **Crie um README** com as instruções para compilar, testar e rodar o projeto.
-4. O link do repositório deverá ser enviado para o e-mail **gabriel@leeksolucoes.com.br**, **marcos.bresolin@leeksolucoes.com.br** e **joao.marcelino@leeksolucoes.com.br** com o título **Teste Vaga Fullstack**.
+## Requisitos
 
----
+Antes de rodar o projeto, verifique se as seguintes ferramentas estão instaladas:
 
-### Especificações Técnicas
+- [Node.js](https://nodejs.org/en/) (versão 16 ou superior)
+- [npm](https://www.npmjs.com/)
+- [PostgreSQL](https://www.postgresql.org/)
 
-#### Funcionalidades
+### Clonar repositório
 
-1. **Autenticação de Usuário**
+```bash
+git clone https://github.com/devguilara/fullstack-teste-tecnico
+```
 
-   - Permitir que o usuário se registre e faça login usando autenticação JWT.
-   - Proteger rotas para que apenas usuários autenticados possam acessar a aplicação.
+## Configuração do Backend (NestJS)
 
-2. **CRUD de Tarefas**
+### 1. Acessar pasta do backend
 
-   - O usuário autenticado deve poder criar, visualizar, atualizar e excluir tarefas.
-   - Cada tarefa deve ter:
-     - Título
-     - Descrição
-     - Status (ex.: "pendente", "em progresso", "concluída")
-     - Datas de criação e conclusão (opcional)
+```bash
+cd backend
+```
 
-3. **Interface de Usuário**
-   - Criar uma interface com:
-     - Tela de login e registro
-     - Tela de listagem e gerenciamento de tarefas
-     - Modal de confirmação para remoção de tarefa
-   - Aplicar um design básico e responsivo
+### 2. Instalar dependências
 
-#### Requisitos Técnicos
+```bash
+npm install
+```
 
-1. **Front-end**: Desenvolver em **Next.js**.
-   - Implementar rotas protegidas e controle de autenticação.
-   - Estilizar com CSS ou qualquer pré-processador.
-2. **Back-end**: Desenvolver em **NestJS**.
-   - Implementar rotas REST para gerenciar as tarefas e autenticação.
-   - Utilizar **Prisma** ou **TypeORM** para gerenciar o banco de dados relacional.
-3. **Banco de Dados**
-   - Configurar um banco de dados relacional **PostgreSQL**.
-4. **Validação e Boas Práticas**
-   - Implementar validação dos dados (como uso de class-validator para validações no NestJS).
-   - Proteger rotas de back-end usando middlewares de autenticação.
+### 3. Configurar o Banco de Dados
 
----
+```env
+DATABASE_URL=postgresql://usuario:senha@localhost:5432/nome_do_banco
 
-### Pontos Extras
+```
 
-- Dockerização.
-- Criar uma documentação da api com **Swagger**.
+### 4. Rodar as Migrations
 
----
+```bash
+npx prisma migrate dev
+```
 
-### O que avaliaremos em seu teste
+### 5. Rodar o Servidor
 
-1. **Organização do Projeto**
-2. **Qualidade e Estrutura do Código**
-3. **Componentização e Lógica**
-4. **Alcance dos Objetivos Propostos**
-5. **Atenção aos Detalhes e Boas Práticas**
+```bash
+npm run start
+```
 
----
+## Configuração do Frontend (Next.js)
 
-Boa sorte! 😉
+### 1. Acessar pasta do client
+
+```bash
+cd client
+```
+
+### 2. Instalar dependências
+
+```bash
+npm install
+```
+
+### 3. Rodar o frontend
+
+```bash
+npm run dev
+```
+
+### Estrutura do Projeto
+
+- backend/: Contém o código fonte do backend, incluindo o servidor NestJS, autenticação, lógica de tarefas, etc.
+
+- client/: Contém o código fonte do frontend, incluindo as páginas Next.js, componentes React, e estilização com TailwindCSS.

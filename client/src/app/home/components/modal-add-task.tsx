@@ -32,9 +32,9 @@ export const ModalAddTask: React.FC<IModalAddTask> = ({
             className="cursor-pointer text-gray-600 hover:text-gray-900"
           />
           <p className="text-xl font-semibold text-white">Adicionar Tarefa</p>
-          
         </div>
       }
+
     >
       <form onSubmit={(e) => e.preventDefault()}>
         <div className="flex flex-col gap-4">
